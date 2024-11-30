@@ -1,0 +1,16 @@
+[project]
+authors = ["hastmark <hastmark2001@hotmail.com>"]
+channels = ["conda-forge"]
+description = "Add a short description here"
+name = "acpp-hello-world"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+clean = 'rm -rf build'
+gen = 'cmake -S . -B build; mv build/compile_commands.json .'
+build = 'pixi run gen; make -C build'
+add = 'pixi run build; ./build/acpp-hello-world -add'
+sub = 'pixi run build; ./build/acpp-hello-world -sub'
+
+[dependencies]

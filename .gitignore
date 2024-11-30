@@ -1,0 +1,8 @@
+compile_commands.json
+build
+.cache
+
+# pixi environments
+.pixi
+pixi.lock
+*.egg-info
